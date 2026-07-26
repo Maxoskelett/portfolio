@@ -138,11 +138,11 @@ git push -u origin main
 1. Gehe zu deinem Repository auf GitHub
 2. Settings → Pages
 3. Source: Deploy from a branch
-4. Branch: `main`, Folder: `out`
+4. Branch: `gh-pages`, Folder: `/ (root)`
 5. Speichern
 
 ### 3. Eigene Domain verwenden
-- Wähle `Custom domain` und trage `maxwittwer.com` ein.
+- Wähle `Custom domain` und trage `maxwittwer.de` ein.
 - GitHub erstellt dann eine `CNAME`-Datei für dich.
 
 ### 4. Deploy Script hinzufügen (optional)
@@ -171,7 +171,9 @@ jobs:
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          cname: maxwittwer.de
 ```
 
 ## 🛠 Tech Stack
