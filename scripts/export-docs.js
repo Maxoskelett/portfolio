@@ -32,7 +32,6 @@ function copyRecursive(source, target) {
   for (const entry of entries) {
     const sourcePath = path.join(source, entry.name);
     const targetPath = path.join(target, entry.name);
-
     if (entry.isDirectory()) {
       copyRecursive(sourcePath, targetPath);
     } else {
